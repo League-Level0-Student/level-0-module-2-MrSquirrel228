@@ -14,35 +14,61 @@ import javax.swing.JOptionPane;
 public class AnimalFarm {
 
 AnimalFarm() {
-	String cow = playNoise(moo.wav);
+
 	
 	// * 1. Ask the user which animal they want, then play the sound of that animal.
 	 
 	  String r = JOptionPane.showInputDialog(null, "what aminal noise would you like to hear");
-	 if(r=cow){
+	  
+	  if (r.equals ("cow")) {
+		  playMoo();
+	  }
 	 
-	 }
+	  if(r.equals ("duck")) {
+		  playQuack();
+	  }
+	 
+	  if (r.equals("cat")) {
+		  playMeow();
+	  }
+	
+	  if (r.equals("dog")) {
+		  playWoof();
+	  }
+	  
+	  if (r.equals("llama")) {
+		  playLlama();
+	  }
+	  
+}
 	 
 	/* 2. Make it so that the user can keep entering new animals. */
-}
+
 
 void playMoo() {
-	playNoise(mooFile);
+	playNoise(cow);
 }
 
 void playQuack() {
-	playNoise(quackFile);
+	playNoise(duck);
 }
 
 void playWoof() {
-	playNoise(woofFile);
+	playNoise(dog);
 }
 
+void playMeow() {
+	playNoise(cat);
+}
 
-String quackFile = "quack.wav";
-String mooFile = "moo.wav";
-String woofFile = "woof.wav";
-String meowFile = "meow.wav";
+void playLlama() {
+	playNoise(llamaFile);
+}
+
+String duck = "quack.wav";
+String cow = "moo.wav";
+String dog = "woof.wav";
+String cat = "meow.wav";
 String llamaFile = "llama.wav";
 
 
